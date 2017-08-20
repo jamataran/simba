@@ -1,2 +1,3 @@
 # simba
-Proyecto para control de gastos del vehículo
+Proyecto para control de gastos domésticos
+
