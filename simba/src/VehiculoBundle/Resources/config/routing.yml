@@ -1,0 +1,14 @@
+vehiculo_homepage:
+    path:     /
+    defaults: { _controller: VehiculoBundle:Default:index }
+
+#Repostajes
+lista_repostajes:
+    path:   /repostajes/{pagina}
+    defaults: { _controller: VehiculoBundle:Default:repostajeList, pagina: 1 }
+    requirements:
+      pagina: '\d+'
+
+bootstrap:
+  path: /bootstrap
+  defaults: { _controller: VehiculoBundle:Default:layout }
