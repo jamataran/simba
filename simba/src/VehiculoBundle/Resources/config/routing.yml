@@ -9,6 +9,10 @@ lista_repostajes:
     requirements:
       pagina: '\d+'
 
+nuevo_repostaje:
+    path: /repostajes/nuevo
+    defaults: { _controller: VehiculoBundle:Default:repostajeNew }
+
 bootstrap:
   path: /bootstrap
   defaults: { _controller: VehiculoBundle:Default:layout }

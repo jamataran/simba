@@ -1,62 +1,72 @@
 {% extends 'base.html.twig' %}
 
-    {% block meta %}
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-    {% endblock %}
+{% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endblock %}
 
+{% block stylesheets %}
+    {% stylesheets
+    'templates/css/logo-nav.css'
+    'bundles/app/css/*'
+    'bundles/vehiculo/css/*'
+    'templates/vendor/bootstrap/css/bootstrap.min.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
 
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('nuevo_repostaje') }}">Nuevo repostaje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('lista_repostajes') }}">Lista repostajes</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Alta</a></li>
+                            {# <li><a href="#">Listado</a></li>
+                             <li><a href="#">Page 1-3</a></li>#}
+                        </ul>
+                    </li>
+                    {#<li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>#}
 
-    {% block stylesheets %}  <!-- Bootstrap core CSS -->
-        <link href="{{ asset("templates/vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="{{ asset("templates/logo-nav.css") }}" rel="stylesheet">
-    {% endblock %}
-
-    {% block nav %}
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
-    {% endblock %}
-
-
-
-
-
+        </div>
+    </nav>
+{% endblock %}
 
 {% block javascripts %}
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset("templates/vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ asset("templates/vendor/popper/popper.min.js") }}"></script>
-    <script src="{{ asset("templates/vendor/bootstrap/js/bootstrap.min.js") }}"></script>
+    {% javascripts
+    'templates/vendor/jquery/jquery.min.js'
+    'templates/vendor/popper/popper.min.js'
+    'templates/vendor/bootstrap/js/bootstrap.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}

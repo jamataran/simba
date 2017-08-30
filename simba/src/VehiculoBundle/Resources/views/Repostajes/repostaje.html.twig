@@ -7,26 +7,26 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Fecha</th>
-                <th>Kilómetros recorridos</th>
-                <th>Total litros</th>
-                <th>Consumo medio</th>
-                <th>Total Repostaje</th>
-                <th>Precio carburante</th>
-                <th>Medida ordenador</th>
+                <th class="align-right">Fecha</th>
+                <th class="align-right">Kilómetros recorridos</th>
+                <th class="align-right">Total litros</th>
+                <th class="align-right">Consumo medio</th>
+                <th class="align-right">Total Repostaje</th>
+                <th class="align-right">Precio carburante</th>
+                <th class="align-right">Medida ordenador</th>
             </tr>
             </thead>
             <tbody>
             {% for repostaje in repostajes %}
 
                 <tr>
-                    <td>{{ repostaje.fechaRepostaje |date('d-m-Y') }}</td>
-                    <td>{{ repostaje.kilometros | number_format(2, ',', '.') }}</td>
-                    <td>{{ repostaje.litrosRepostados | number_format(2, ',', '.') }}</td>
-                    <td>*pendiente</td>
-                    <td>{{ repostaje.totalRepostaje | number_format(2, ',', '.') }} €</td>
-                    <td>*pendiente</td>
-                    <td>{{ repostaje.medidaOrdenador | number_format(2, ',', '.') }}</td>
+                    <td class="align-right">{{ repostaje.fechaRepostaje |date('d-m-Y') }}</td>
+                    <td class="align-right">{{ repostaje.kilometros | number_format(2, ',', '.') }}</td>
+                    <td class="align-left">{{ repostaje.litrosRepostados | number_format(2, ',', '.') }}</td>
+                    <td class="align-right">*pendiente</td>
+                    <td class="align-right">{{ repostaje.totalRepostaje | number_format(2, ',', '.') }} €</td>
+                    <td class="align-right">*pendiente</td>
+                    <td class="align-right">{{ repostaje.medidaOrdenador | number_format(2, ',', '.') }}</td>
                 </tr>
 
             {% endfor %}

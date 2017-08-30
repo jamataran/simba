@@ -1,0 +1,9 @@
+{% extends 'layout.bootstrap.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="mt-5">Nuevo repostaje</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -41,3 +41,6 @@
 **/Entity/*~
 .idea/
 simba.iml
+/simba/web/js/
+/simba/web/css/
+!/simba/web/bundles/vehiculo/css/vehiculo.css

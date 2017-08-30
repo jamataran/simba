@@ -5,3 +5,17 @@ vehiculo:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+login:
+    path:   /login
+    defaults:  { _controller: AppBundle:Seguridad:login }
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:       /logout
+
+registro:
+  path: /registro
+  defaults: {_controller: AppBundle:Seguridad:registro}

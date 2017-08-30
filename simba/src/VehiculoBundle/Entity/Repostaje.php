@@ -35,33 +35,14 @@ class Repostaje
      * @ORM\Column(type="decimal", nullable=false, precision=8, scale=2)
      */
     private $kilometros;
-
-    /**
-     * @return mixed
-     */
-    public function getKilometros()
-    {
-        return $this->kilometros;
-    }
-
-    /**
-     * @param mixed $kilometros
-     */
-    public function setKilometros($kilometros)
-    {
-        $this->kilometros = $kilometros;
-    }
-
     /**
      * @ORM\Column(type="decimal", nullable=false, precision=4, scale=2)
      */
     private $litrosRepostados;
-
     /**
      * @ORM\Column(type="decimal", nullable=false, precision=4, scale=2)
      */
     private $totalRepostaje;
-
     /**
      * @ORM\Column(type="decimal", nullable=true, precision=4, scale=2)
      */
@@ -118,17 +99,22 @@ class Repostaje
     /**
      * @return mixed
      */
-    public function getLitrosRepostados()
+    public function getMedidaOrdenador()
     {
-        return $this->litrosRepostados;
+        return $this->medidaOrdenador;
     }
 
     /**
-     * @param mixed $litrosRepostados
+     * @param mixed $medidaOrdenador
      */
-    public function setLitrosRepostados($litrosRepostados)
+    public function setMedidaOrdenador($medidaOrdenador)
     {
-        $this->litrosRepostados = $litrosRepostados;
+        $this->medidaOrdenador = $medidaOrdenador;
+    }
+
+    public function getPrecioCombustible()
+    {
+        return $this->getTotalRepostaje() / $this->getLitrosRepostados();
     }
 
     /**
@@ -150,17 +136,38 @@ class Repostaje
     /**
      * @return mixed
      */
-    public function getMedidaOrdenador()
+    public function getLitrosRepostados()
     {
-        return $this->medidaOrdenador;
+        return $this->litrosRepostados;
     }
 
     /**
-     * @param mixed $medidaOrdenador
+     * @param mixed $litrosRepostados
      */
-    public function setMedidaOrdenador($medidaOrdenador)
+    public function setLitrosRepostados($litrosRepostados)
     {
-        $this->medidaOrdenador = $medidaOrdenador;
+        $this->litrosRepostados = $litrosRepostados;
+    }
+
+    public function getConsumoMedio()
+    {
+        return 100 * $this->getLitrosRepostados() / ($this->getKilometros());
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKilometros()
+    {
+        return $this->kilometros;
+    }
+
+    /**
+     * @param mixed $kilometros
+     */
+    public function setKilometros($kilometros)
+    {
+        $this->kilometros = $kilometros;
     }
 
 }
