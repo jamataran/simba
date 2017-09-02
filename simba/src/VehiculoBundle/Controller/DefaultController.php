@@ -21,9 +21,6 @@ class DefaultController extends Controller
         $items_per_page = 10;
         $offset = ($pagina - 1) * $items_per_page;
         $repostajeRepository=$this->getDoctrine()->getRepository("VehiculoBundle:Repostaje");
-        //$repostajes = $repostajeRepository->findBy(array(), array('fechaRepostaje' => 'desc'));
-        //$repostajes = $repostajeRepository->getRepostajePage(null);
-        //$repostajes=$repostajeRepository->findBy(array('id'=>'12997'),null,$offset,$items_per_page);
         $repostajes = $repostajeRepository->findAll();
 
         return $this->render('VehiculoBundle:Repostajes:repostaje-list.html.twig',array('pagina'=>$pagina, 'repostajes'=>$repostajes));
