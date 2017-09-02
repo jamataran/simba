@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="VehiculoBundle\Entity\RepostajeRepository")
  * @ORM\Table(name="REPOSTAJES")
  * */
 class Repostaje

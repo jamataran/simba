@@ -9,7 +9,6 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -177,39 +176,7 @@ class Usuarios implements UserInterface, \Serializable
     }
 
 
-    /**
-     * Add producto
-     *
-     * @param \AppBundle\Entity\Productos $producto
-     *
-     * @return Usuarios
-     */
-    public function addProducto(\AppBundle\Entity\Productos $producto)
-    {
-        $this->productos[] = $producto;
 
-        return $this;
-    }
-
-    /**
-     * Remove producto
-     *
-     * @param \AppBundle\Entity\Productos $producto
-     */
-    public function removeProducto(\AppBundle\Entity\Productos $producto)
-    {
-        $this->productos->removeElement($producto);
-    }
-
-    /**
-     * Get productos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProductos()
-    {
-        return $this->productos;
-    }
 
     /**
      * String representation of object
